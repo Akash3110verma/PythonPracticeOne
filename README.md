@@ -10,10 +10,29 @@
   <li>Create PR from Github UI</li>
 </ul>
 <br>
-<p>Create Employee-Management-System which follows OOPs concepts.</p>
+<p>Create Employee-Management-System which follows OOPs concepts.<br>Floder structure should be:</p>
 <pre>
   Parent folder
     src
     test
   main.py
 </pre>
+<P>src should contains main logic and test should contain all the unittest cases along with the dummy data required for the success of unittest</P>
+<p>Functionallity</p>
+<p>Aim of Employee’s Management System:
+  <ul>
+    <li>Built The Employee Table.</li>
+    <li>Insert New Entries.</li>
+    <li>Delete The Entries.</li>
+    <li>Search A Record.</li>
+    <li>Data of the Employee’s:</li>
+  </ul>
+
+Name
+<ul>
+<li>Employee ID</li>
+<li>Designation</li>
+<li>Experience</li>
+<li>Age,</li>
+</ul>
+</p>
