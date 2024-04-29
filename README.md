@@ -36,3 +36,5 @@ Name
 <li>Age,</li>
 </ul>
 </p>
+
+<p>Test coverage should be 100%<br>Code should be modular<br>Please use black formatter python extension to format the python code<br>Same type of entity/functionality must be in same class.</p>
