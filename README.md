@@ -25,17 +25,19 @@
   <ul>
     <li>Built The Employee Table.</li>
     <li>Insert New Entries.</li>
-    <li>Delete The Entries.</li>
-    <li>Search A Record.</li>
-    <li>Data of the Employee’s:</li>
+    <li>Delete a Emp by ID.</li>
+    <li>Search A Record by ID.</li>
+    <li>Search A Record by Name.</li>
+    <li>Search all Records by designation.</li>
   </ul>
-
-Name
+  
+Data of the Employee’s
 <ul>
-<li>Employee ID</li>
-<li>Designation</li>
-<li>Experience</li>
-<li>Age,</li>
+  <li>Name</li>
+  <li>Employee ID</li>
+  <li>Designation</li>
+  <li>Experience</li>
+  <li>Age,</li>
 </ul>
 </p>
 
