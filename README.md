@@ -1,5 +1,7 @@
 <p><b>OOPs in python practice for BMW</b></p>
 
+<p><b>Objective: To understand the OOPs concept.</b></p>
+
 <p>Follow below steps:-</p>
 <ul>
   <li>fork this repository</li>
