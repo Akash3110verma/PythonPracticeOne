@@ -10,4 +10,10 @@
   <li>Create PR from Github UI</li>
 </ul>
 <br>
-<p>Create Employee-Management-System which follows OOPs concepts.<br>Folder structure should be:<br><ul>parent folder<li>scr</li><li>test</li></ul>main.py</p>
+<p>Create Employee-Management-System which follows OOPs concepts.</p>
+<pre>
+  Parent folder
+    src
+    test
+  main.py
+</pre>
