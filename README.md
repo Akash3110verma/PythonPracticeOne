@@ -9,3 +9,5 @@
   <li>Push the changes</li>
   <li>Create PR from Github UI</li>
 </ul>
+<br>
+<p>Create Employee-Management-System which follows OOPs concepts.<br>Folder structure should be:<br>parent folder<ul><li>scr</li><li>test</li></ul><br>main.py</p>
