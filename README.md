@@ -1,6 +1,6 @@
 <p><b>OOPs in python practice for BMW</b></p>
 
-<p><b>Objective: To understand the OOPs concept.</b></p>
+<p><b>Objective: To understand the OOPs concept and to get famillier with git and GitHub.</b></p>
 
 <p>Follow below steps:-</p>
 <ul>
