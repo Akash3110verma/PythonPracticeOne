@@ -34,8 +34,7 @@
   <li><b>skills</b>(This field is not required for MNG, atleast two skills must be added for DEV, and Atmost one skill for TL)</li>
 </ul>
 <br>
-  Manager class inherets Emp class
- <br>
+  Manager class inherets Emp class <br>
   Project Class
   <ul>
     <li>Project ID</li>
