@@ -33,8 +33,9 @@
   <li><b>Salary</b>(it should be autofill, for DEV. 40,000, for TL 40,000*2=80,000, for MNG. 40,000*3=1,20,000)</li>
   <li><b>skills</b>(This field is not required for MNG, atleast two skills must be added for DEV, and Atmost one skill for TL)</li>
 </ul>
- 
-<i><b>NOTE:</b>There should be a function which will execute when an employee is created, it should autometically assign a team, if adding a MNG then, it should ask you for Project Name and a project(class) should be created, if adding TL then according to project requirement TL should be added to project and if you are adding DEV then according to skills of DEV and requirement in project DEV should ne added to project. There can only be 5 DEV 1 TL and 1 MNG in a project. IF there is no project available and you are adding a EMP the put that EMP on beanch, if new project define then fist it should add EMP from beanch, there can only 5 MNG and all project should be equally divided among MNG, No duplicate projects, </i>
+<br>
+  Manager class inherets Emp class
+ <br>
   Project Class
   <ul>
     <li>Project ID</li>
@@ -60,6 +61,8 @@
     <li>Get salary</li>
     <li>Add a MNG</li>
   </ul>
+
+<i><b>NOTE:</b>There should be a function which will execute when an employee is created, it should autometically assign a team, if adding a MNG then, it should ask you for Project Name and a project(class) should be created, if adding TL then according to project requirement TL should be added to project and if you are adding DEV then according to skills of DEV and requirement in project DEV should ne added to project. There can only be 5 DEV 1 TL and 1 MNG in a project. IF there is no project available and you are adding a EMP the put that EMP on beanch, if new project define then fist it should add EMP from beanch, there can only 5 MNG and all project should be equally divided among MNG, No duplicate projects, </i>
 </p>
 
 <p>Test coverage should be 100%<br>Code should be modular<br>Please use black formatter python extension to format the python code<br>Same type of entity/functionality must be in same class.</p>
