@@ -1,10 +1,12 @@
 # from Employee import Employee
 from src.Employee import Employee
+from src.Manager import Manager
 
 
 class EmplooyeeManagementSystem:
     def __init__(self):
         self.employees = []
+        self.managers = []
 
     def add_employee(self, employee_name, employee_id, designation, experience, age):
         new_employee = Employee(
@@ -43,6 +45,23 @@ class EmplooyeeManagementSystem:
                 if employee.employee_id == employee_id
             )
             deleted_employee = self.employees.pop(index_to_delete)
-            print(f"Employee '{deleted_employee.name}' with ID {employee_id} deleted.")
+            print(
+                f"Employee '{deleted_employee.employee_name}' with ID {employee_id} deleted."
+            )
         except StopIteration:
             print(f"Employee Id not found")
+
+    def add_manager(self, name, employee_id, experience, age):
+        manager = Manager(name, employee_id, experience, age)
+        self.managers.append(manager)
+        print(f"Manager '{name}' added successfully!")
+
+    def add_employee_to_manager(self, manager_id, employee):
+        manager = next(
+            (mgr for mgr in self.managers if mgr.employee_id == manager_id), None
+        )
+        if manager:
+            manager.add_employee(employee)
+            print(f"Employee '{employee.name}' added under Manager '{manager.name}'.")
+        else:
+            print(f"Manager with ID {manager_id} not found.")

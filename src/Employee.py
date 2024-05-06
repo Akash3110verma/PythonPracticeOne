@@ -6,7 +6,7 @@ class Employee:
         self.experience = experience
         self.age = age
 
-    print("emp table done")
+    #print("emp table done")
 
     def get_emp_name(self):
         return self.employee_name
