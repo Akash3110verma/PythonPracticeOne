@@ -1,18 +1,36 @@
 # from Employee import Employee
-from src.Employee import Employee
-from src.Manager import Manager
+# import json
+# from src.model.Employee import Employee
+# from src.model.Manager import Manager
+# from src.model.Project import Project
+from src.helper.json_operation import JsonOperation
+
+EMPLOYEE_PATH = (
+    "C:/Users/amm927862/Desktop/pythonPractice/PythonPracticeOne/data/employees.json"
+)
 
 
 class EmplooyeeManagementSystem:
     def __init__(self):
         self.employees = []
         self.managers = []
+        self.projects = []
 
-    def add_employee(self, employee_name, employee_id, designation, experience, age):
-        new_employee = Employee(
-            employee_name, employee_id, designation, experience, age
-        )
+    def add_employee(self, new_employee):
         self.employees.append(new_employee)
+        new_emp = [
+            {
+                "Name": new_employee.get_emp_name(),
+                "Degignation": new_employee.get_emp_designation(),
+                "Id": new_employee.get_emp_id(),
+                "Experience": new_employee.get_emp_experience(),
+                "Age": new_employee.get_emp_age(),
+            }
+        ]
+
+        val = JsonOperation.load_json_data(EMPLOYEE_PATH)
+        new_emp = val + new_emp
+        JsonOperation.dump_json_data(EMPLOYEE_PATH, new_emp)
         print("New Employee Added")
 
     def get_all_emp(self):
@@ -25,10 +43,12 @@ class EmplooyeeManagementSystem:
             print(f"Employee age: {emp.age}")
             print()
 
-    def search_employee(self, emp_id):
-        for employee in self.employees:
-            if employee.employee_id == emp_id:
+    def search_employee(self, emp_name):
+        all_employee = JsonOperation.load_json_data(EMPLOYEE_PATH)
+        for employee in all_employee:
+            if employee.get("Name") == emp_name:
                 return employee
+        return None
 
     def valid_employee_details(self, employee_id: int) -> str:
         found_employee = self.search_employee(employee_id)
@@ -50,11 +70,6 @@ class EmplooyeeManagementSystem:
             )
         except StopIteration:
             print(f"Employee Id not found")
-
-    def add_manager(self, name, employee_id, experience, age):
-        manager = Manager(name, employee_id, experience, age)
-        self.managers.append(manager)
-        print(f"Manager '{name}' added successfully!")
 
     def add_employee_to_manager(self, manager_id, employee):
         manager = next(

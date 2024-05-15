@@ -1,8 +1,6 @@
 from src.Employee_management_system import EmplooyeeManagementSystem
-from src.Employee import Employee
-from src.Manager import Manager
-
-# from PythonPracticeOne.src.Employee_management_system import EmplooyeeManagementSystem
+from src.model.Employee import Employee
+from src.model.Manager import Manager
 
 
 def main():
@@ -16,24 +14,35 @@ def main():
         print("3. Get all Employees")
         print("4. Validate Employee Details")
         print("5. Delete and Employee Record")
-        print("6. Add Manager")
-        print("7. Add Employee to Manager")
-        print("8. Display Manager's Team")
+        print("6. Display Manager's Team")
 
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            employee_name = input("Enter employee name: ")
-            employee_id = int(input("Enter employee ID: "))
-            designation = input("Enter employee designation: ")
-            experience = int(input("Enter employee experience (in years): "))
-            age = int(input("Enter employee age: "))
-            emps.add_employee(employee_name, employee_id, designation, experience, age)
+            emp_or_mng = input(
+                "Do you want to add Developer press D or Manager press M"
+            )
+            if emp_or_mng.lower() == "d":
+                employee_name = input("Enter employee name: ")
+                designation = input("Enter employee designation: ")
+                experience = int(input("Enter employee experience (in years): "))
+                age = int(input("Enter employee age: "))
+                new_employee = Employee(employee_name, designation, experience, age)
+                emps.add_employee(new_employee)
+            if emp_or_mng.lower() == "m":
+                name = input("Enter manager name: ")
+                experience = int(input("Enter Experience: "))
+                age = int(input("Enter Age: "))
+                new_mng = Manager(name, experience, age)
+                emps.add_employee(new_mng)
 
         elif choice == "2":
-            employee_id = int(input("Enter employee ID to search "))
-            details = emps.get_employee_details(employee_id)
-            print(details)
+            employee_name = input("Enter employee name to search ")
+            details = emps.search_employee(employee_name)
+            if not details:
+                print("Employee not found")
+            else:
+                print(details)
 
         elif choice == "3":
             # employee_id = int(input("Enter employee ID to search "))
@@ -55,17 +64,6 @@ def main():
                     print("Invalid input")
 
         elif choice == "6":
-            name = input("Enter manager name: ")
-            manager_id = int(input("Enter manager ID: "))
-            emps.add_manager(name, manager_id, experience, age)
-
-        elif choice == "7":
-            manager_id = int(input("Enter manager ID: "))
-            employee_name = input("Enter employee name: ")
-            employee = {"name": employee_name}
-            emps.add_employee_to_manager(manager_id, employee)
-
-        elif choice == "8":
             manager_id = int(input("Enter manager ID to display team: "))
             manager = next(
                 (mgr for mgr in emps.managers if mgr.employee_id == manager_id), None
